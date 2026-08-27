@@ -608,31 +608,31 @@ Debug → Start Without Debugging
 
 ### Welcome Screen
 
-![Welcome Screen](screenshots/welcome-screen.png)
+![Welcome Screen](screenshots/welcome-screen.png.png)
 
 ### Login Screen 1
 
-![Login Screen 1](screenshots/user-login1.png)
+![Login Screen 1](screenshots/user-login1.png.png)
 
 ### Login Screen 2
 
-![Login Screen 2](screenshots/user-login2.png)
+![Login Screen 2](screenshots/user-login2.png.png)
 
 ### Manager Panel
 
-![Manager Panel](screenshots/manager-panel.png)
+![Manager Panel](screenshots/manager-panel.png.png)
 
 ### Patient Menu
 
-![Patient Menu](screenshots/patient-menu.png)
+![Patient Menu](screenshots/patient-menu.png.png)
 
 ### Doctor Menu
 
-![Doctor Menu](screenshots/doctor-menu.png)
+![Doctor Menu](screenshots/doctor-menu.png.png)
 
 ### Admin Menu
 
-![Admin Menu](screenshots/admin-menu.png)
+![Admin Menu](screenshots/admin-menu.png.png)
 
 ### Appointment Management
 
