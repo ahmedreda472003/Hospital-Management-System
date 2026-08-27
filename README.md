@@ -374,10 +374,9 @@ The system also checks:
 
 Appointments have their own IDs and statuses such as:
 
-```text
-Scheduled
-Completed
-Cancelled
+- 📅 Scheduled
+- ✅ Completed
+- ❌ Cancelled
 
 ---
 
@@ -578,28 +577,28 @@ Hospital Management System
 
 ## ▶️ Running the Project
 
-1. Clone the repository:
+1.📥 Clone the repository:
 
 ```bash
 git clone https://github.com/ahmedreda472003/Hospital-Management-System.git
 ```
 
-2. Open the project in **Visual Studio**.
+2. 🖥️ Open the project in Visual Studio.
 
-3. Select the appropriate configuration:
+3. ⚙️ Select the appropriate configuration:
 
 ```text
 Debug / Release
 x64
 ```
 
-4. Build the solution:
+4. 🔨 Build the solution:
 
 ```text
 Build → Build Solution
 ```
 
-5. Run the application:
+5. ▶️ Run the application:
 
 ```text
 Debug → Start Without Debugging
