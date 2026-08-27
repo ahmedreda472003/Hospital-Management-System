@@ -10,10 +10,10 @@ The system is designed to manage hospital operations through different user role
 
 The system is based on four main user roles:
 
-* Manager
-* Admin
-* Doctor
-* Patient
+* 💼 Manager
+* 👨‍💼 Admin
+* 👨‍⚕️ Doctor
+* 👤 Patient
 
 Each role has specific responsibilities and permissions.
 
@@ -21,32 +21,32 @@ Each role has specific responsibilities and permissions.
 
 ### 💼 Manager
 
-The Manager is responsible for **Admin Management and the hospital's financial operations**.
+The **Manager** is responsible for **Admin Management and the hospital's financial operations**.
 
 The Manager can access:
 
-#### Admin Management
+#### 👥 Admin Management
 
-* Add admins
-* Remove admins
-* Update admin information
+- Add admins
+- Remove admins
+- Update admin information
 
-#### Hospital Account
+#### 🏦 Hospital Account
 
-* View the hospital account
-* View the hospital balance
+- View the hospital account
+- View the hospital balance
 
-#### Payroll
+#### 💰 Payroll
 
-* Pay doctors' salaries
-* Pay admins' salaries
-* Transfer doctors' consultation shares
+- Pay doctors' salaries
+- Pay admins' salaries
+- Transfer doctors' consultation shares
 
-#### Reports
+#### 📊 Reports
 
-* View transaction history
-* View financial summaries
-* Manage and review doctors' financial entitlements
+- View transaction history
+- View financial summaries
+- Manage and review doctors' financial entitlements
 
 The Manager handles the hospital's financial operations through the **Manager Management** component.
 
@@ -56,29 +56,29 @@ The Manager uses the **Doctor ID** to identify the doctor when transferring the 
 
 ### 👨‍💼 Admin
 
-The Admin is responsible for the hospital's **day-to-day operational management**.
+The **Admin** is responsible for the hospital's **day-to-day operational management**.
 
-Admins can access:
+The Admin can access:
 
-#### Patient Management
+#### 👥 Patient Management
 
-* Register new patients
-* Manage patient-related operations
+- Register new patients
+- Manage patient-related operations
 
-#### Doctor Management
+#### 👨‍⚕️ Doctor Management
 
-* Add doctors
-* Update doctors
-* Remove doctors
+- Add doctors
+- Update doctors
+- Remove doctors
 
-#### Appointment Management
+#### 📅 Appointment Management
 
-* Manage appointments
+- Manage appointments
 
-#### Payment Management
+#### 💳 Payment Management
 
-* View pending cash payments
-* Confirm cash payments
+- View pending cash payments
+- Confirm cash payments
 
 The Admin also has a personal bank account and can access their account information.
 
@@ -86,85 +86,90 @@ The Admin also has a personal bank account and can access their account informat
 
 ### 👨‍⚕️ Doctor
 
-Doctors can access:
+The **Doctor** can access:
 
-#### Appointment Management
+#### 📅 Appointment Management
 
-* View their appointments
-* Manage their appointments
+- View their appointments
+- Manage their appointments
 
-#### Medical Records
+#### 🩺 Medical Records
 
-* Create medical records for their patients
-* Add diagnosis
-* Add prescriptions
-* Add medical notes
+- Create medical records for their patients
+- Add diagnosis
+- Add prescriptions
+- Add medical notes
 
-#### Account
+#### 🏦 Account
 
-* View their account information
-* Manage their personal bank account
+- View their account information
+- Manage their personal bank account
 
 ---
 
 ### 👤 Patient
 
-Patients can access:
+The **Patient** can access:
 
-#### Appointments
+#### 📅 Appointments
 
-* Book appointments
-* View their appointments
-* Cancel appointments
+- Book appointments
+- View their appointments
+- Cancel appointments
 
-#### Medical Records
+#### 🩺 Medical Records
 
-* View their medical records
+- View their medical records
 
-#### Account
+#### 🏦 Account
 
-* View their account information
-* View their bank account and balance
-* Pay consultation fees
-* Choose between Cash and Visa payment methods
+- View their account information
+- View their bank account and balance
+- Pay consultation fees
+- Choose between Cash and Visa payment methods
 
 ---
 
 # 🏦 Banking System
 
-The system includes a bank account for each major user/entity:
+The system manages **independent bank accounts** for the main users and entities:
 
 ```text
-Patient
-   │
-   │ Bank Account
-   ▼
-Doctor
-   │
-   │ Bank Account
-   ▼
-Admin
-   │
-   │ Bank Account
-   ▼
-Hospital
-   │
-   │ Bank Account
-   ▼
-Financial Operations
+┌─────────────────┐
+│ Patient Account │
+└─────────────────┘
+
+┌─────────────────┐
+│ Doctor Account  │
+└─────────────────┘
+
+┌─────────────────┐
+│  Admin Account  │
+└─────────────────┘
+
+┌──────────────────┐
+│ Hospital Account │
+└──────────────────┘
 
 ```
 
-The banking system is based on individual accounts, with each account containing:
+Each bank account contains:
 
-* Account Number
-* Balance
+🔢 Account Number
+💰 Balance
 
-These accounts are used throughout the system to perform financial operations such as payments, salaries, refunds, and transfers.
+These accounts are used throughout the system to perform financial operations such as:
+
+💳 Payments
+💵 Salary payments
+↩️ Refunds
+🔄 Financial transfers
+
+The banking system allows financial operations to be performed between the different accounts while maintaining the current balance of each account.
 
 ---
 
-# 💸 Transaction Logging
+# 🧾 Transaction Logging
 
 The system maintains a persistent **Transaction History** for financial operations.
 
@@ -178,13 +183,13 @@ Each transaction stores:
 * Transaction Type
 * Date and Time
 
-### Transaction Format
+### 📝 Transaction Format
 
 ```text
 Sender-Receiver-Amount-Transaction Type-Date & Time
 ```
 
-### Example
+### 📌 Example
 
 ```text
 PAT1004-HOS-400-Appointment Payment-05/08/2026 04:56:59
@@ -197,12 +202,12 @@ Reception-HOS-400-Appointment Payment-23/08/2026 03:43:58
 
 The transaction history can contain different types of financial operations, including:
 
-* Appointment Payments
-* Refunds
-* Doctor Entitlements
-* Doctor Salary Payments
-* Admin Salary Payments
-* Money Transfers
+* 💳 Appointment Payments
+* ↩️ Refunds
+* 💰 Doctor Entitlements
+* 💵 Doctor Salary Payments
+* 💵 Admin Salary Payments
+* 🔄 Money Transfers
 
 This provides a clear **financial audit trail** and allows the system to track financial activities over time.
 
@@ -215,7 +220,8 @@ Patients can pay their consultation fees using:
 * 💵 Cash
 * 💳 Visa
 
-### Cash Payment
+
+### 💵 Cash Payment
 
 When a patient chooses Cash, the payment is initially registered as a **pending cash payment**.
 
@@ -226,7 +232,7 @@ The Admin can then access the Payment Management section to:
 
 Once the cash payment is confirmed, the payment is processed by the system and recorded as a financial transaction.
 
-### Visa Payment
+### 💳 Visa Payment
 
 For Visa payments, the system checks whether the patient has sufficient balance before processing the payment.
 
@@ -261,7 +267,7 @@ Doctor Financial Entitlement
 Doctor Bank Account
 ```
 
-### Example
+### 📌 Example
 
 If the consultation fee is:
 
@@ -341,12 +347,12 @@ The system keeps a persistent record of financial activities, allowing the Manag
 
 Financial information can include:
 
-* Hospital transactions
-* Appointment payments
-* Refunds
-* Salary payments
-* Doctor entitlements
-* Money transfers
+* 🧾 Hospital transactions
+* 📅 Appointment payments
+* ↩️ Refunds
+* 💰 Salary payments
+* 👨‍⚕️ Doctor entitlements
+* 🔄 Money transfers
 
 This allows the system to maintain a clear financial history rather than relying only on current account balances.
 
@@ -356,23 +362,22 @@ This allows the system to maintain a clear financial history rather than relying
 
 The appointment system allows patients to:
 
-* Book appointments
-* View appointments
-* Cancel appointments
+* 📅 Book appointments
+* 👁️ View appointments
+* ❌ Cancel appointments
 
 The system also checks:
 
-* Doctor availability
-* Patient availability
-* Appointment status
+* 👨‍⚕️ Doctor availability
+* 👤 Patient availability
+* 📌 Appointment status
 
 Appointments have their own IDs and statuses such as:
 
 ```text
 Scheduled
-Combleted
+Completed
 Cancelled
-```
 
 ---
 
@@ -382,12 +387,12 @@ Doctors can create medical records associated with a specific appointment.
 
 A medical record contains:
 
-* Patient ID
-* Doctor ID
-* Appointment ID
-* Diagnosis
-* Prescription
-* Notes
+* 👤 Patient ID
+* 👨‍⚕️ Doctor ID
+* 📅 Appointment ID
+* 🩺 Diagnosis
+* 💊 Prescription
+* 📝 Notes
 
 Before creating a medical record, the system verifies that the doctor is actually associated with the appointment and that the appointment has not been cancelled.
 
@@ -399,19 +404,19 @@ The system separates operational management from financial management.
 
 The **Admin** handles the hospital's operational tasks, including:
 
-* Registering patients
-* Managing doctors
-* Managing appointments
-* Confirming cash payments
+* 👤 Registering patients
+* 👨‍⚕️ Managing doctors
+* 📅 Managing appointments
+* 💵 Confirming cash payments
 
 The **Manager** is responsible for:
 
-* Managing admins
-* Hospital account management
-* Payroll
-* Financial transfers
-* Doctor consultation shares
-* Financial reports
+* 👨‍💼 Managing admins
+* 🏦 Hospital account management
+* 💰 Payroll
+* 🔄 Financial transfers
+* 👨‍⚕️ Doctor consultation shares
+* 📊 Financial reports
 
 This separation of responsibilities helps keep the system organized and clearly defines the responsibilities of each role.
 
@@ -419,65 +424,65 @@ This separation of responsibilities helps keep the system organized and clearly 
 
 # 🧠 Programming Concepts Used
 
-This project applies several important C++ programming concepts, including:
+This project applies several important **C++ programming concepts**, including:
 
-* Object-Oriented Programming
-* Encapsulation
-* Inheritance
-* Polymorphism
-* Constructors
-* Copy Constructors
-* Static Members
-* Operator Overloading
-* Templates
-* Exception Handling
-* File Handling
-* Dynamic Memory
-* STL Containers
-* Data Structures
-* Input Validation
+- 🧩 Object-Oriented Programming (OOP)
+- 🔒 Encapsulation
+- 🌳 Inheritance
+- 🔄 Polymorphism
+- 🏗️ Constructors
+- 📋 Copy Constructors
+- ⚙️ Static Members
+- ➕ Operator Overloading
+- 🧰 Templates
+- ⚠️ Exception Handling
+- 📁 File Handling
+- 💾 Dynamic Memory
+- 📦 STL Containers
+- 🗂️ Data Structures
+- 🛡️ Input Validation
 
 ---
 
 ### 🗄️ HospitalData
 
-`HospitalData` is the central data class used to store the hospital's main system data in memory.
+`HospitalData` is the central data class responsible for storing the hospital's main system data in memory.
 
-It contains the main data collections and financial information used throughout the system, including:
+It maintains the main data collections and financial information used throughout the system, including:
 
-- Patients
-- Doctors
-- Admins
-- Appointments
-- Medical Records
-- Bank Accounts
-- Hospital Account
-- Financial Transactions
-- Financial Entitlements
+- 👤 Patients
+- 👨‍⚕️ Doctors
+- 👨‍💼 Admins
+- 📅 Appointments
+- 🩺 Medical Records
+- 🏦 Bank Accounts
+- 🏥 Hospital Account
+- 💸 Financial Transactions
+- 💰 Financial Entitlements
 
 The different managers and system components use `HospitalData` to access and update the current hospital data.
 
-Persistent data is stored in files and loaded into `HospitalData` when the system runs.
+Persistent data is stored in files and loaded into `HospitalData` when the application starts. Changes made during execution are written back to the corresponding files to maintain data persistence.
 
 ---
 
 
 # 💾 Data Persistence
 
-The system uses file-based storage to preserve data between program executions.
+The system uses **file-based storage** to preserve data between program executions.
 
-The application stores information such as:
+The application stores and restores information such as:
 
-* Patients
-* Doctors
-* Admins
-* Appointments
-* Medical Records
-* Bank Accounts
-* Hospital Account
-* Financial Entitlements
-* Transactions
-* IDs
+- 👤 Patients
+- 👨‍⚕️ Doctors
+- 👨‍💼 Admins
+- 📅 Appointments
+- 🩺 Medical Records
+- 🏦 Bank Accounts
+- 🏥 Hospital Account
+- 💰 Financial Entitlements
+- 💸 Transactions
+- 🆔 IDs
 
 This allows the system to restore its data when it is started again.
 
@@ -489,16 +494,16 @@ The system includes validation and checks to prevent invalid operations.
 
 Examples include:
 
-* Checking doctor availability
-* Checking patient availability
-* Preventing invalid appointments
-* Checking appointment status
-* Verifying the doctor associated with an appointment
-* Checking sufficient patient balance for Visa payments
-* Validating account balances
-* Validating user information
-* Handling invalid financial operations
-* Preventing invalid data from being stored
+* 👨‍⚕️ Checking doctor availability
+* 👤 Checking patient availability
+* 📅 Preventing invalid appointments
+* 📌 Checking appointment status
+* 👨‍⚕️ Verifying the doctor associated with an appointment
+* 💳 Checking sufficient patient balance for Visa payments
+* 🏦 Validating account balances
+* 👤 Validating user information
+* 💰 Handling invalid financial operations
+* 🛡️ Preventing invalid data from being stored
 
 ---
 
@@ -564,14 +569,14 @@ Hospital Management System
 
 # ▶️ How to Run
 
-## Requirements
+## ⚙️ Requirements
 
 * Windows
 * Visual Studio 2022 or later
 * C++ compiler
 * C++17 or later recommended
 
-## Running the Project
+## ▶️ Running the Project
 
 1. Clone the repository:
 
@@ -606,51 +611,51 @@ Debug → Start Without Debugging
 بده:
 # 📷 Screenshots
 
-### Welcome Screen
+### 🏥 Welcome Screen
 
 ![Welcome Screen](screenshots/welcome-screen.png.png)
 
-### Login Screen 1
+### 🔐 Login Screen 1
 
 ![Login Screen 1](screenshots/user-login1.png.png)
 
-### Login Screen 2
+### 🔐 Login Screen 2
 
 ![Login Screen 2](screenshots/user-login2.png.png)
 
-### Manager Panel
+### 💼 Manager Panel
 
 ![Manager Panel](screenshots/manager-panel.png.png)
 
-### Patient Menu
+### 👤 Patient Menu
 
 ![Patient Menu](screenshots/patient-menu.png.png)
 
-### Doctor Menu
+### 👨‍⚕️ Doctor Menu
 
 ![Doctor Menu](screenshots/doctor-menu.png.png)
 
-### Admin Menu
+### 👨‍💼 Admin Menu
 
 ![Admin Menu](screenshots/admin-menu.png.png)
 
-### Appointment Management
+### 📅 Appointment Management
 
 ![Appointment Management](screenshots/appointment.png)
 
-### Medical Records
+### 🩺 Medical Records
 
 ![Medical Records](screenshots/medical-record.png)
 
-### Hospital Account
+### 🏦 Hospital Account
 
 ![Hospital Account](screenshots/hospital-account.png)
 
-### Payroll
+### 💰 Payroll
 
 ![Payroll](screenshots/payroll.png)
 
-### Reports
+### 📊 Reports
 
 ![Reports](screenshots/report.png)
 
